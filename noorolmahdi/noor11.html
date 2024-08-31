@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
+    <link rel="stylesheet" href="noor11.css">
+</head>
+<body>
+  <nav id="navBar">
+    <div class="container">
+      <UL>
+        <li><a href="qoran.html" target="_self">خانه</a></li>
+
+   
+
+     
+       </UL>
+   </div>
+
+</nav>
+
+
+
+  <div class="gallery-wrap">
+    <img src="images/next.png" id="nextBtn">
+
+ 
+    <div class="gallery">
+      <div>
+        <span><img src="images/ax.jpeg"></span>
+        <span><img src="images/ax22.jpeg"></span>
+        <span><img src="images/ax33.jpeg"></span>
+      </div>
+ 
+      <div>
+        <span><img src="images/ax5.jpeg"></span>
+        <span><img src="images/ax6.jpeg"></span>
+        <span><img src="images/ax77.jpeg"></span>
+      </div>
+
+      <div>
+        <span><img src="images/ax9.jpeg"></span>
+        <span><img src="images/ax10.jpg"></span>
+        <span><img src="images/ax12.jpeg"></span>
+      </div>
+    </div> 
+    <img src="images/back.png" id="backBtn">
+  </div>
+<script>
+    let scrollContainer = document.querySelector(".gallery");
+    let backBtn = document.getElementById("backBtn");
+    let nextBtn = document.getElementById("nextBtn");
+
+    scrollContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;    scrollContainer.style.scrollBehavior = "auto"
+    });
+
+    nextBtn.addEventListener("click", () => {
+        scrollContainer.style.scrollBehavior = "smooth"
+        scrollContainer.scrollLeft += 900;
+    });
+
+    backBtn.addEventListener("click", () => {
+         scrollContainer.style.scrollBehavior = "smooth"
+        scrollContainer.scrollLeft -= 900;
+    });
+</script>
+
+</body>
+
+</html>

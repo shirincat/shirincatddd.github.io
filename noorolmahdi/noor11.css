@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'sans-serif' , 'poppins';
+    direction: rtl; 
+}
+body{
+    background: #191919;
+}
+.container {
+    margin-left: 0;
+    margin-right: auto;
+    margin-inline-start: auto;
+    margin-inline-end: 0;
+    box-sizing: border-box;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+#navBar{
+    margin-top: 0px;
+
+    width: 100%;
+    height: 40px;
+    text-align: CENTER;
+    color: rgb(132, 109, 247);
+    
+    border:1px none ;
+    border-radius: 0px 0px 00px 0px;
+
+    position: fixed;
+}
+#navBar ul{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    
+}
+#navBar li{
+    display: flex;
+    float: right;
+}
+#navBar a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding-left: 15px;
+    width: 100%;
+    display:inline-block;
+    
+}
+.gallery{
+    width: 900px;
+    display: flex;
+    overflow-x: scroll;
+}
+.gallery div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    padding: 10px;
+    flex:none;
+}
+.gallery div img{
+    width: 100%;
+    filter: grayscale(10%);
+    transition:transform 0.5s;
+}
+.gallery::-webkit-scrollbar{
+    display: none;
+
+}
+.gallery-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10% auto;
+}
+#backBtn , #nextBtn{
+    width: 50px;
+    cursor: pointer;
+    margin: 40px;
+}
+.gallery div img:hover{
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.2);
+
+
+}
+
+
+
+@media (max-width: 768px) {
+    #navBar {
+        height: auto;
+        padding: 15px 0;
+    }
+    #navBar a {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+    .gallery-wrap {
+        flex-direction: column;
+    }
+    .gallery {
+        width: 100%;
+    }
+    .gallery div {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust size for tablets */
+    }
+    #backBtn,
+    #nextBtn {
+        width: 30px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery div {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Larger images for mobile */
+    }
+    .gallery div img {
+        width: 100%;
+        max-height: 200px; /* Keep images large */
+    }
+    #navBar a {
+        font-size: 14px;
+    }
+    .gallery-wrap {
+        margin: 20% auto;
+    }
+}

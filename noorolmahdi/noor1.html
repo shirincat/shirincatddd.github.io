@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sabtenam</title>
+    <link rel="stylesheet" href="noor1.css">
+</head>
+<body>
+    <header id="main-header">
+        <h3>موسسه قرآنی نورالمهدی</h3> 
+        <h3>مهد و پیش دبستانی شمیم بهشت</h3>
+    </header>
+    
+    <nav id="navBar">
+        <div class="container">
+            <ul>
+                <li><a href="qoran.html" target="_self">خانه</a></li>
+                <li><a href="tel:09163028742">تماس</a></li>
+                <li><a href="noor1.html">ثبت نام</a></li>
+                <li><a href="noor11.html">گالری</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="signup-form">
+        <h2>ثبت‌نام</h2>
+        <form id="signupForm" method="post">
+            <label for="first_name">نام: </label>
+            <input type="text" id="first_name" name="first_name" required>
+            
+            <label for="last_name">نام خانوادگی:</label>
+            <input type="text" id="last_name" name="last_name" required>
+
+            <label for="email">ایمیل:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">شماره تلفن:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <button type="submit">ثبت‌نام</button>
+        </form>
+        <p id="confirmationMessage" style="display:none;">ثبت‌نام شما با موفقیت انجام شد. به زودی با شما تماس خواهیم گرفت.</p>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+        
+           
+            const firstName = document.getElementById('first_name').value;
+            const lastName = document.getElementById('last_name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+        
+            console.log("Calling user at phone number: " + phone);
+         
+            const formData = {
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                phone: phone
+            };
+        
+           
+            let signups = JSON.parse(localStorage.getItem('signups')) || [];
+            signups.push(formData);
+            localStorage.setItem('signups', JSON.stringify(signups));
+        
+           
+            showConfirmationMessage();
+        });
+        
+        function showConfirmationMessage() {
+            const confirmationMessage = document.getElementById('confirmationMessage');
+            confirmationMessage.style.display = 'block';
+        
+           
+            setTimeout(function() {
+                confirmationMessage.style.display = 'none';
+            }, 5000); 
+        }
+    </script>
+
+</body>
+</html>

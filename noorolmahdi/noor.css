@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+body {
+    text-align: right;
+    font-family: 'Vazir', sans-serif;
+    background-color: rgb(235, 226, 210);
+
+}
+
+.container {
+    margin-left: 0;
+    margin-right: auto;
+    margin-inline-start: auto;
+    margin-inline-end: 0;
+    box-sizing: border-box;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+#main-header{
+    background-color: rgb(201, 160, 240);
+    color: #fff;
+    text-align: center;
+}
+#navBar{
+    width: 100%;
+    height: 40px;
+    text-align: CENTER;
+    color: rgb(67, 32, 243);
+    background-color: rgb(56, 7, 109);
+    border:1px none ;
+    border-radius: 0px 0px 00px 0px;
+
+    position: fixed;
+}
+#navBar ul{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    
+}
+#navBar li{
+    display: inline;
+    float: right;
+}
+#navBar a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding-left: 15px;
+    width: 100%;
+    display:inline-block;
+    
+}
+#showCase{
+    width: 100%;
+    height: 100vh;
+    background-color: linear-gradient(135deg,rgb(146,0,51),rgb(251, 118, 242)rgb(251, 118, 242));
+    
+    background-position:center right;
+    height: 475px;
+    width: 100%;
+  
+    background-repeat:inherit;
+}
+#showCase img{
+    border-radius: 5px;
+    margin-top: 5vh;
+    width: 100%;
+}
+
+#showCase .text {
+    margin-top: 150px;
+    color: #7d00b3;
+
+}
+.class-list {
+    display: grid;
+    grid-template-columns:repeat(1,1fr) ;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgb(235, 226, 210);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-left: 1050px;
+}
+
+.class-list h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.class-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.class-list li {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.class-list li:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.class-list h3 {
+    margin: 0 0 10px;
+    color: #7d00b3;
+}
+
+.class-list p {
+    margin: 5px 0;
+    color: #f328b6;
+    font-size: 14px;
+}
+
+#side{
+    position: fixed;
+    left: 0; /* Position the sidebar on the left side */
+    top: 50%; /* Start positioning from the middle of the page */
+    transform: translateY(-50%); /* Center the sidebar vertically */
+    width: 170px; /* Width of the sidebar */
+    height: 30px; /* Height of the sidebar */
+    background-color: #054415; /* Background color */
+    color: white; /* Text color */
+    padding: 0 10px; /* Padding inside the sidebar */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    display: flex;
+    align-items: center; /* Center content vertically within the sidebar */
+    justify-content: center; /* Center content horizontally */
+
+}
+#side a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px; /* Adjust font size */
+    transition: 0.3s; /* Smooth transition for hover effects */
+    white-space: nowrap; /* Prevent text from wrapping */
+
+}
+@keyframes square
+{
+    0%
+    {
+        transform:scale(0);
+        opacity:1;
+    }
+    100%
+    {
+        transform:scale(2);
+        opacity:0;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    #navBar ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    #navBar li {
+        margin-bottom: 10px;
+    }
+
+    #showCase {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .class-list {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    #navBar a {
+        font-size: 16px;
+        padding: 10px 5px;
+    }
+
+    #showCase .text {
+        font-size: 10px;
+        margin-top: 50px;
+    }
+
+    .class-list h2 {
+        font-size: 20px;
+    }
+
+    .class-list p {
+        font-size: 12px;
+    }
+}
